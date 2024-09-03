@@ -49,7 +49,9 @@ function school_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
+			'header' => esc_html__( 'Header Menu Location', 'fwd' ),
+			'footer-left' => esc_html__( 'Footer - Left Side', 'fwd' ),
+			'footer-right' => esc_html__( 'Footer - Right Side', 'fwd' )
 		)
 	);
 
@@ -181,3 +183,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function change_staff_title_placeholder( $title ) {
+    $screen = get_current_screen();
+
+    if ( 'fwd-staff' == $screen->post_type ) {
+        $title = 'Add staff name';
+    }
+
+    return $title;
+}
+add_filter( 'enter_title_here', 'change_staff_title_placeholder' );
