@@ -1,15 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package School_Theme
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,12 +29,19 @@
 			$school_theme_description = get_bloginfo( 'description', 'display' );
 			if ( $school_theme_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $school_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $school_theme_description;?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<!-- Menu Toggle Button -->
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+			<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'school-theme' ); ?></span>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="#fff" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+			</svg>
+		</button>
+
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'school-theme' ); ?></button>
 			<?php
 			wp_nav_menu(
 				array(

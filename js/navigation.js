@@ -97,3 +97,17 @@
 		}
 	}
 }() );
+
+
+
+  //for the mobile version hamburger menu
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#site-navigation');
+
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', function() {
+            navigation.classList.toggle('toggled');
+        });
+    }
+});
