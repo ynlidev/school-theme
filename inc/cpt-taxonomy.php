@@ -34,7 +34,8 @@ $args = array(
     'menu_position'      => 7,
     'menu_icon'          => 'dashicons-heart',
     'supports'           => array( 'title', 'editor' ),
-    'template'           => array( array( 'core/pullquote' ) ),
+    'template'           =>array(array('core/paragraph'),
+                                        array('core/button')),
     'template_lock'      => 'all'
 );
 
@@ -113,7 +114,7 @@ function fwd_register_taxonomies() {
 
     register_taxonomy('fwd-role', array('fwd-staff'), $args);
 
-    //student taxonomy
+        //student taxonomy
     $labels = array(
     'name'              => _x( 'Program', 'taxonomy general name' ),
     'singular_name'     => _x( 'Program', 'taxonomy singular name' ),
@@ -139,7 +140,6 @@ $args = array(
 );
 
 register_taxonomy( 'fwd-program', array( 'fwd-student' ), $args );
-
 }
 
 add_action('init', 'fwd_register_taxonomies');
