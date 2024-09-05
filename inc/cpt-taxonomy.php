@@ -114,6 +114,32 @@ function fwd_register_taxonomies() {
 
     register_taxonomy('fwd-role', array('fwd-staff'), $args);
 
+        //student taxonomy
+    $labels = array(
+    'name'              => _x( 'Program', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Program', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Programs' ),
+    'all_items'         => __( 'All Programs' ),
+    'parent_item'       => __( 'Parent Program' ),
+    'parent_item_colon' => __( 'Parent Program:' ),
+    'edit_item'         => __( 'Edit Program' ),
+    'update_item'       => __( 'Update Program' ),
+    'add_new_item'      => __( 'Add New Program' ),
+    'new_item_name'     => __( 'New Student Program' ),
+    'menu_name'         => __( 'Program' ),
+);
+
+$args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'programs' ),
+);
+
+register_taxonomy( 'fwd-program', array( 'fwd-student' ), $args );
 }
 
 add_action('init', 'fwd_register_taxonomies');
