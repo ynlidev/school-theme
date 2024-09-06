@@ -17,6 +17,10 @@ $labels = array(
     'parent_item_colon'  => __( 'Parent Students:' ),
     'not_found'          => __( 'No students found.' ),
     'not_found_in_trash' => __( 'No students found in Trash.' ),
+    'featured_image'        => __( 'Student featured image'),
+    'set_featured_image'    => __( 'Set student featured image'),
+    'remove_featured_image' => __( 'Remove student featured image'),
+    'use_featured_image'    => __( 'Use as featured image'),
 );
     
 $args = array(
@@ -27,13 +31,13 @@ $args = array(
     'show_in_menu'       => true,
     'show_in_rest'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'students' ),
+    'rewrite'            => array( 'slug' => 'fwd-student' ),
     'capability_type'    => 'post',
-    'has_archive'        => false,
+    'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 7,
     'menu_icon'          => 'dashicons-heart',
-    'supports'           => array( 'title', 'editor' ),
+    'supports'           => array( 'title', 'thumbnail', 'editor' ),
     'template'           =>array(array('core/paragraph'),
                                         array('core/button')),
     'template_lock'      => 'all'
