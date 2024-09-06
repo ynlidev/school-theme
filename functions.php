@@ -192,4 +192,10 @@ function change_staff_title_placeholder( $title ) {
 
     return $title;
 }
+
 add_filter( 'enter_title_here', 'change_staff_title_placeholder' );
+
+/**
+ * Add Image Size
+ */
+add_image_size( "studentImg", 200, 300, true );
