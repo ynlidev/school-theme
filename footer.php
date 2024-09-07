@@ -11,22 +11,36 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'school-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://yining.ca/school-site/">Yining & Luke</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer id="colophon" class="site-footer">
+    <!-- Footer Logo -->
+    <nav class="footer-logo" id="footer-logo" > 
+    </nav>
+
+    <!-- Footer Credits -->
+    <section class="footer-credits">
+        <h2>Credits</h2>
+		<?php esc_html_e( 'Created by ', 'fwd' ); ?><a href="<?php echo esc_url( __( 'https://yining.ca/school-site/', 'fwd' ) ); ?>"><?php esc_html_e( 'Luke & Yining', 'fwd' ); ?></a>
+        <p>Photos courtesy of <a href="https://burst.shopify.com/" target="_blank" rel="noopener">Burst</a>.</p>
+    </section>
+
+    <!-- Footer Navigation -->
+    <nav class="footer-nav">
+        <h2>Links</h2>
+        <?php
+        if ( has_nav_menu( 'footer' ) ) {
+            wp_nav_menu( array(
+                'theme_location' => 'footer',
+                'menu_id'        => 'menu-footer-menu',
+                'container'      => 'div',
+                'container_class' => 'menu-footer-menu-container',
+                'menu_class'     => 'menu',
+            ) );
+        }
+        ?>
+    </nav>
+</footer>
+
+</div>
 
 <?php wp_footer(); ?>
 

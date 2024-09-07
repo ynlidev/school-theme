@@ -19,9 +19,9 @@ get_header();
 <main id="primary" class="site-main">
 
 <?php
-// Display the content from the block editor
+
 while ( have_posts() ) : the_post();
-    the_content(); // This will output the content from the block editor
+    the_content();
 endwhile;
 ?>
 
@@ -29,9 +29,9 @@ endwhile;
     <h2>Recent News</h2>
     <div class="recent-posts-wrapper">
     <?php
-    // Query to get the 3 most recent posts
+    
     $recent_posts = new WP_Query( array(
-        'posts_per_page' => 3, // Limit to 3 posts
+        'posts_per_page' => 3,
     ) );
 
     if ( $recent_posts->have_posts() ) :
