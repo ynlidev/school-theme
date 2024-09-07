@@ -27,9 +27,9 @@
     <nav class="footer-nav">
         <h2>Links</h2>
         <?php
-        if ( has_nav_menu( 'footer' ) ) {
+        if ( has_nav_menu( 'footer-right' ) ) {
             wp_nav_menu( array(
-                'theme_location' => 'footer',
+                'theme_location' => 'footer-right',
                 'menu_id'        => 'menu-footer-menu',
                 'container'      => 'div',
                 'container_class' => 'menu-footer-menu-container',
