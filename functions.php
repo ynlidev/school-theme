@@ -51,6 +51,7 @@ function school_theme_setup() {
 		array(
 			'header' => esc_html__( 'Header Menu Location', 'fwd' ),
 			'footer-left' => esc_html__( 'Footer - Left Side', 'fwd' ),
+			'footer-middle' => esc_html__( 'Footer - Middle', 'fwd' ),
 			'footer-right' => esc_html__( 'Footer - Right Side', 'fwd' )
 		)
 	);
