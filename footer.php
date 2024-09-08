@@ -14,6 +14,7 @@
 <footer id="colophon" class="site-footer">
     <!-- Footer Logo -->
     <nav class="footer-logo" id="footer-logo" > 
+		<?php wp_nav_menu( array( 'theme_location' => 'footer-left'));?>
     </nav>
 
     <!-- Footer Credits -->
