@@ -20,24 +20,45 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			$args = array(
+				'post_type' => 'fwd-student',
+				'posts_per_page' => -1,
+				'tax_query' => array(
+					array(
+						'taxonomy' =>'fwd-program',
+						'field' => 'slug',
+						'terms' => 'developer'
+						)
+						)
+					);
+			$query = new WP_Query( $args );
+			if ($query -> have_posts()){
+				echo '<section class="student-section"><h2>developers</h2>';
+				while ($query ->have_posts()){
+					$query -> the_post();
+					?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+							<h2><?php the_title(); ?></h2>
+							<?php the_post_thumbnail( 'studentImg' ); ?>
+						</a>
+						<?php the_excerpt(); ?>
+					</article>
+					<?php
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
+				}
+				echo '</section>';
+				wp_reset_postdata();
+			} else {
+				echo '<p>found nothing</p>';
+			}
 
 			the_posts_navigation();
-
-		else :
+			
+			else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
