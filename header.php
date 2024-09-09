@@ -33,15 +33,15 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<!-- Menu Toggle Button -->
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
-			<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'school-theme' ); ?></span>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-				<path fill="#fff" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-			</svg>
-		</button>
 
 		<nav id="site-navigation" class="main-navigation">
+			<!-- Menu Toggle Button -->
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'school-theme' ); ?></span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
+				</svg>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
