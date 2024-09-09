@@ -46,6 +46,43 @@ get_header();
 							<?php the_post_thumbnail( 'studentImg' ); ?>
 						</a>
 						<?php the_excerpt(); ?>
+						<?php $speciality = join(', ', wp_list_pluck(get_the_terms(the_post(), 'fwd-program'), 'slug')); ?>
+						<p>Speciality: <a href=<?php echo get_term_link($speciality, 'fwd-program'); ?>><?php echo $speciality ?></a></p>
+					</article>
+					<?php
+
+				}
+				echo '</section>';
+				wp_reset_postdata();
+			} else {
+				echo '<p>found nothing</p>';
+			}
+			//designers
+			$args = array(
+				'post_type' => 'fwd-student',
+				'posts_per_page' => -1,
+				'tax_query' => array(
+					array(
+						'taxonomy' =>'fwd-program',
+						'field' => 'slug',
+						'terms' => 'designer'
+						)
+						)
+					);
+			$query = new WP_Query( $args );
+			if ($query -> have_posts()){
+				echo '<section class="student-section"><h2>designers</h2>';
+				while ($query ->have_posts()){
+					$query -> the_post();
+					?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+							<h2><?php the_title(); ?></h2>
+							<?php the_post_thumbnail( 'studentImg' ); ?>
+						</a>
+						<?php the_excerpt(); ?>
+						<?php $speciality = join(', ', wp_list_pluck(get_the_terms(the_post(), 'fwd-program'), 'slug')); ?>
+						<p>Speciality: <a href=<?php echo get_term_link($speciality, 'fwd-program'); ?>><?php echo $speciality ?></a></p>
 					</article>
 					<?php
 
