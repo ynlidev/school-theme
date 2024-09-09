@@ -20,7 +20,7 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			
 			<?php
 			/* Start the Loop */
 			$args = array(
@@ -31,9 +31,9 @@ get_header();
 						'taxonomy' =>'fwd-program',
 						'field' => 'slug',
 						'terms' => 'developer'
-					)
-				)
-			);
+						)
+						)
+					);
 			$query = new WP_Query( $args );
 			if ($query -> have_posts()){
 				echo '<section class="student-section"><h2>developers</h2>';
@@ -57,8 +57,8 @@ get_header();
 			}
 
 			the_posts_navigation();
-
-		else :
+			
+			else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
