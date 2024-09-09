@@ -16,12 +16,16 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			//maybe remove this?
 			get_template_part( 'template-parts/content', get_post_type() );
+
+			//update this based on taxonomy
+			echo '<h3>[Meet the other Designer Students]</h3>';
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'school-theme' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'school-theme' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'school-theme' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'school-theme' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
@@ -36,5 +40,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
