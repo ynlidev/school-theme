@@ -20,13 +20,33 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
 			get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			if (have_rows('schedule')){
+				?>
+				<table>
+					<tr>
+						<th>Date</th>
+						<th>Course</th>
+						<th>Instructor</th>
+					</tr>
+
+				<?php
+				while( have_rows('schedule')) : the_row();
+					echo '<tr>';
+					$sub_value = get_sub_field('date');
+					echo '<td>'. $sub_value .'</td>';
+					$sub_value = get_sub_field('course');
+					echo '<td>'. $sub_value .'</td>';
+					$sub_value = get_sub_field('instructor');
+					echo '<td>'. $sub_value->post_title .'</td>';
+					echo '</tr>';
+				endwhile;
+				?>
+					</table>
+				<?php
+			}
+
 
 		endwhile; // End of the loop.
 		?>
