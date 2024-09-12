@@ -42,11 +42,11 @@ get_header();
                 </a>
             <?php endif; ?>
 
-            <div class="entry-content" data-aos="fade-up" data-aos-delay="700">
+            <div>
                 <?php the_excerpt(); ?>
             </div>
 
-            <footer class="entry-footer" data-aos="fade-up" data-aos-delay="900">
+            <footer>
                 <span class="cat-links">Posted in <?php the_category(', '); ?></span> 
                 <span class="tags-links"><?php the_tags( 'Tagged ', ', ' ); ?></span>
                 <span class="comments-link">
@@ -56,7 +56,7 @@ get_header();
         </article>
     <?php endwhile; ?> 
 
-    <div class="pagination" data-aos="fade-up" data-aos-delay="1000">
+    <div>
         <?php
         the_posts_pagination( array(
             'prev_text' => __( 'Previous', 'your-theme' ),
