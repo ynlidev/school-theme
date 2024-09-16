@@ -1,0 +1,55 @@
+.page-id-18 {
+  .site-main {
+    p {
+      font-size: 1.5rem;
+      margin: 2rem;
+    }
+
+    h1 {
+      margin: 1rem;
+    }
+
+    .wp-container-core-columns-is-layout-1 {
+      text-align: center;
+    }
+
+    .recent-news {
+      h2 {
+        margin: 1rem;
+      }
+    }
+
+    .post-thumbnail {
+      img {
+        margin: 0 2rem;
+      }
+    }
+  }
+
+
+  a {
+    position: relative;
+    max-width: 250px;
+    margin: 0 auto 2rem;
+    display: block;
+    
+    h3 {
+      position: absolute; 
+      width: 100%;
+      margin: 0;
+      padding: 1.5em;
+      font-size: 1em;
+      text-align: center;
+      background: $color__border-input;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      color: $color__text-screen;
+    }
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}
