@@ -1,0 +1,26 @@
+.tax-fwd-program {
+  main {
+    max-width: 60.5rem;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-weight: 500;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    width: 200px;
+    aspect-ratio: auto 200 / 300;
+    overflow: clip;
+  }
+
+  @media (min-width: 37.5em) {
+    img {
+      display: inline;
+      float: left;
+      margin-right: 1.5rem;
+    }
+  }
+}

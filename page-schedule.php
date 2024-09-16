@@ -25,6 +25,7 @@ get_header();
 			if (have_rows('schedule')){
 				?>
 				<table>
+					<caption>Weekly Course Schedule</caption>
 					<tr>
 						<th>Date</th>
 						<th>Course</th>
@@ -54,5 +55,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

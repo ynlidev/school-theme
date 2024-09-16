@@ -37,22 +37,23 @@ get_header();
 					);
 			$query = new WP_Query( $args );
 			if ($query -> have_posts()){
-				echo '<section class="student-section"><h2>developers</h2>';
+				echo '<section class="student-section">';
 				while ($query ->have_posts()){
 					$query -> the_post();
 					?>
 					<article>
-						<a href="<?php the_permalink(); ?>">
-							<h2><?php the_title(); ?></h2>
-							<?php the_post_thumbnail( 'studentImg' ); ?>
-						</a>
+						<h2>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h2>
+						<?php the_post_thumbnail( 'studentImg' ); ?>
 						<?php the_excerpt(); ?>
 						<p>Speciality: <a href=<?php echo get_term_link($speciality, 'fwd-program'); ?>><?php echo $speciality ?></a></p>
 					</article>
 					<?php
 
 				}
-				echo '</section>';
 				wp_reset_postdata();
 			} else {
 				echo '<p>found nothing</p>';
@@ -72,7 +73,6 @@ get_header();
 					);
 			$query = new WP_Query( $args );
 			if ($query -> have_posts()){
-				echo '<section class="student-section"><h2>designers</h2>';
 				while ($query ->have_posts()){
 					$query -> the_post();
 					?>
@@ -105,5 +105,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
