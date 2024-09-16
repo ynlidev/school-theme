@@ -46,6 +46,26 @@
         color: $link-hover-color;
       }
     }
+    
+
+.menu, .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul {
+  display: contents; 
+}
+
+.menu li {
+  display: contents; 
+}
+ 
+
+
+
+
   }
 
    #footer-logo img {
