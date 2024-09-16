@@ -38,14 +38,10 @@ endwhile;
         while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
             <div class="recent-post-item">
                 <a href="<?php the_permalink(); ?>">
+                <h3><?php the_title(); ?></h3>
                     <?php if ( has_post_thumbnail() ) : ?>
-                        <div class="post-thumbnail">
                             <?php the_post_thumbnail( 'medium' ); ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="post-title">
-                        <h3><?php the_title(); ?></h3>
-                    </div>
+                    <?php endif; ?> 
                 </a>
             </div>
         <?php endwhile;
