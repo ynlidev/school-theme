@@ -214,7 +214,7 @@ add_filter( 'enter_title_here', 'change_staff_title_placeholder' );
 /**
  * Add Image Size
  */
-add_image_size( "studentImg", 200, 300, true );
+add_image_size( "studentImg", 300, 200, true );
 
 /**
  * adding excerpt length filter hook
@@ -231,7 +231,7 @@ add_filter('excerpt_length', 'school_site_excerpt_length', 999);
  */
 function school_site_excerpt_ellipse($length){
 	if(is_post_type_archive('fwd-student')){
-		return '<a href='.get_the_permalink() . '> Read more about the Student.</a>';
+		return '<a href='.get_the_permalink() . '> <br>Read more about the Student.</a>';
 	}
 }
 add_filter('excerpt_more', 'school_site_excerpt_ellipse', 999);

@@ -42,9 +42,9 @@ get_header();
 				while ( $query -> have_posts() ) {
 					$query -> the_post();
 					if(get_the_ID() != $post_id){
-						echo "<a href='". get_the_permalink() ."'>";
+						echo "<p><a href='". get_the_permalink() ."'>";
 						the_title();
-						echo "</a>";
+						echo "</a></p>";
 					}
 						wp_reset_postdata();
 				} 
