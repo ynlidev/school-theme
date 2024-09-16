@@ -13,14 +13,16 @@
 
 <footer id="colophon" class="site-footer">
     <!-- Footer Logo -->
-    <nav class="footer-logo" id="footer-logo" > 
-		<?php wp_nav_menu( array( 'theme_location' => 'footer-left'));?>
+    <nav class="footer-logo">
+		<a href="<?php echo get_home_url(); ?>" class="custom-logo-link" rel="home" aria-current="page">
+            <img  class="logo-icon"src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/09/iconmonstr-school-17-240.png">
+        </a>		
     </nav>
 
     <!-- Footer Credits -->
     <section class="footer-credits">
         <h2>Credits</h2>
-		<?php esc_html_e( 'Created by ', 'fwd' ); ?><a href="<?php echo esc_url( __( 'https://yining.ca/school-site/', 'fwd' ) ); ?>"><?php esc_html_e( 'Luke & Yining', 'fwd' ); ?></a>
+		<?php esc_html_e( 'Created by ', 'fwd' ); ?><a href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'Luke & Yining', 'fwd' ); ?></a>
         <p>Photos courtesy of <a href="https://burst.shopify.com/" target="_blank" rel="noopener">Burst</a>.</p>
     </section>
 
