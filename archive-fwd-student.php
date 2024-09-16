@@ -23,6 +23,7 @@ get_header();
 			
 			<?php
 			/* Start the Loop */
+			$speciality = 'developer';
 			$args = array(
 				'post_type' => 'fwd-student',
 				'posts_per_page' => -1,
@@ -30,7 +31,7 @@ get_header();
 					array(
 						'taxonomy' =>'fwd-program',
 						'field' => 'slug',
-						'terms' => 'developer'
+						'terms' => $speciality
 						)
 						)
 					);
@@ -46,7 +47,6 @@ get_header();
 							<?php the_post_thumbnail( 'studentImg' ); ?>
 						</a>
 						<?php the_excerpt(); ?>
-						<?php $speciality = join(', ', wp_list_pluck(get_the_terms(the_post(), 'fwd-program'), 'slug')); ?>
 						<p>Speciality: <a href=<?php echo get_term_link($speciality, 'fwd-program'); ?>><?php echo $speciality ?></a></p>
 					</article>
 					<?php
@@ -58,6 +58,7 @@ get_header();
 				echo '<p>found nothing</p>';
 			}
 			//designers
+			$speciality = 'designer';
 			$args = array(
 				'post_type' => 'fwd-student',
 				'posts_per_page' => -1,
@@ -65,7 +66,7 @@ get_header();
 					array(
 						'taxonomy' =>'fwd-program',
 						'field' => 'slug',
-						'terms' => 'designer'
+						'terms' => $speciality
 						)
 						)
 					);
@@ -81,7 +82,6 @@ get_header();
 							<?php the_post_thumbnail( 'studentImg' ); ?>
 						</a>
 						<?php the_excerpt(); ?>
-						<?php $speciality = join(', ', wp_list_pluck(get_the_terms(the_post(), 'fwd-program'), 'slug')); ?>
 						<p>Speciality: <a href=<?php echo get_term_link($speciality, 'fwd-program'); ?>><?php echo $speciality ?></a></p>
 					</article>
 					<?php
