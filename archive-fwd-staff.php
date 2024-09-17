@@ -12,7 +12,7 @@ add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main site-main-staff">
 
 		<?php if ( have_posts() ) : ?>
 
