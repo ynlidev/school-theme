@@ -1,95 +1,41 @@
-.page-id-18 {
-  .site-main {
-    p {
-      font-size: 1.5rem;
-      margin: 2rem;
-    }
+.blog, .single {
+    .site-main {
+      margin: auto;
+      padding: 0 1rem;
 
-    h1 {
-      margin: 1rem;
-    }
-
-    .wp-container-core-columns-is-layout-1 {
-      text-align: center;
-    }
-
-    .recent-news {
-      h2 {
-        margin: 1rem;
+      h2 a {
+        text-decoration: none;
       }
-    }
+  
+      header {
+        display: block;
+        unicode-bidi: isolate;
+  
+        h2 {
+          font-size: 1.5em;
+        }
+ 
+      }
 
-    .post-thumbnail {
+      
+  
       img {
-        margin: 0 2rem;
+        max-height: 3500px;
+        object-fit: cover;
+        display: block;
+        height: auto;
+        max-width: 100%;
       }
     }
   }
-
-  a {
-    position: relative;
-    max-width: 250px;
-    margin: 0 auto 2rem;
-    display: block;
-
-    h3 {
-      position: absolute;
-      width: 100%;
-      margin: 0;
-      padding: 1.5em;
-      font-size: 1em;
-      text-align: center;
-      background: $color__border-input;
-      left: 0;
-      bottom: 0;
-      z-index: 10;
-      color: $color__text-screen;
-    }
-    img {
-      display: block;
-      height: auto;
-      max-width: 100%;
-    }
-  }
-  @media (min-width: 48em) {
-    .wrapper-news {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      h2 {
-        width: 100%;
-        margin: 1rem 8rem;
-      }
-      p {
-        width: 100%;
-      }
-
-      a {
-        max-width: 550px;
-      }
-    }
-  }
+  
 
   @media (min-width: 64em) {
-    .site-main {
-      h1 {
-        margin: 2rem 10rem;
-      }
-      p {
-        font-size: 1.5rem;
-        margin: 2rem 10rem;
-      }
-    }
-    .wrapper-news {
-      a img {
-        max-width: 550px;
-      }
-      h2 {
-        margin: 2rem 3rem;
-      }
-      p a {
-        margin: 0 -7rem;
+    .blog, .single {
+      .site-main {
+        max-width: 1400px; 
+        margin: 2rem auto; 
       }
     }
   }
-}
+  
