@@ -211,6 +211,18 @@ function change_staff_title_placeholder( $title ) {
 
 add_filter( 'enter_title_here', 'change_staff_title_placeholder' );
 
+function change_student_title_placeholder( $title ) {
+    $screen = get_current_screen();
+
+    if ( 'fwd-student' == $screen->post_type ) {
+        $title = 'Add student name';
+    }
+
+    return $title;
+}
+
+add_filter( 'enter_title_here', 'change_student_title_placeholder' );
+
 /**
  * Add Image Size
  */
