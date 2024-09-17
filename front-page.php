@@ -24,10 +24,10 @@ while ( have_posts() ) : the_post();
     the_content();
 endwhile;
 ?>
+<section class="wrapper-news">
 
-<div class="recent-news">
     <h2>Recent News</h2>
-    <div class="recent-posts-wrapper">
+  
     <?php
     
     $recent_posts = new WP_Query( array(
@@ -36,22 +36,22 @@ endwhile;
 
     if ( $recent_posts->have_posts() ) :
         while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
-            <div class="recent-post-item">
+            
                 <a href="<?php the_permalink(); ?>">
                 <h3><?php the_title(); ?></h3>
                     <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail( 'medium' ); ?>
+                            <?php the_post_thumbnail(); ?>
                     <?php endif; ?> 
                 </a>
-            </div>
+          
         <?php endwhile;
     endif;
     wp_reset_postdata();
     ?>
-    </div>
-    <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">See All News</a>
-</div>
+  
+    <p><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">See All News</a></p>
 
+</section>
 
 </main><!-- #primary -->
 

@@ -26,15 +26,14 @@
     }
   }
 
-
   a {
     position: relative;
     max-width: 250px;
     margin: 0 auto 2rem;
     display: block;
-    
+
     h3 {
-      position: absolute; 
+      position: absolute;
       width: 100%;
       margin: 0;
       padding: 1.5em;
@@ -50,6 +49,47 @@
       display: block;
       height: auto;
       max-width: 100%;
+    }
+  }
+  @media (min-width: 48em) {
+    .wrapper-news {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      h2 {
+        width: 100%;
+        margin: 1rem 8rem;
+      }
+      p {
+        width: 100%;
+      }
+
+      a {
+        max-width: 550px;
+      }
+    }
+  }
+
+  @media (min-width: 64em) {
+    .site-main {
+      h1 {
+        margin: 2rem 10rem;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 2rem 10rem;
+      }
+    }
+    .wrapper-news {
+      a img {
+        max-width: 550px;
+      }
+      h2 {
+        margin: 2rem 3rem;
+      }
+      p a {
+        margin: 0 -7rem;
+      }
     }
   }
 }
