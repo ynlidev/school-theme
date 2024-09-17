@@ -18,7 +18,7 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_title( '<h2 class="page-title">', '</h2>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -43,7 +43,7 @@ get_header();
 			);
 			$query=new WP_Query($args);
 			if($query->have_posts()){
-				echo '<section class="staff-section"><h2>Faculty</h2>';
+				echo '<h2>Administrative</h2><section class="staff-section">';
 				while ($query->have_posts()){
 					$query->the_post();
 			?>
@@ -51,7 +51,7 @@ get_header();
 			    <div class="staff-section-article">
 					<article> 
 						<!-- name -->
-						<h3><?php the_title();?> Admin</h3> 
+						<h2><?php the_title();?> Admin</h2> 
 						<?php
 						if ( function_exists( 'get_field' )) {
 							if ( get_field( 'biography') ) {
@@ -100,13 +100,13 @@ get_header();
 			$query=new WP_Query($args);
 			if($query->have_posts()){
 		
-				echo '<section class="staff-section"><h2>Faculty</h2>';
+				echo '<h2>Faculty</h2><section class="staff-section">';
 				while ($query->have_posts()){
 					$query->the_post();
 			?>
 			    <div class="staff-section-article">
 					<article> 
-						<h3><?php the_title();?> Faculty</h3> 
+						<h2><?php the_title();?> Faculty</h2> 
 						<?php
 						if ( function_exists( 'get_field' )) {
 							if ( get_field( 'biography') ) {
