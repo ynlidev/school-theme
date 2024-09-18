@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-
+<section class="site-main-section">
 <header data-aos="fade-down" data-aos-duration="1000">
     <h1 class="page-title">News</h1>
 </header>
@@ -54,21 +54,21 @@ get_header();
                 </span>
             </footer>
         </article>
-    <?php endwhile; ?> 
 
-    <div>
-        <?php
-        the_posts_pagination( array(
-            'prev_text' => __( 'Previous', 'your-theme' ),
-            'next_text' => __( 'Next', 'your-theme' ),
-        ) );
-        ?>
-    </div>
+    <?php endwhile; ?> 
+</section>
+    
 
 <?php else : ?>
     <?php get_template_part( 'template-parts/content', 'none' ); ?>
 <?php endif; ?>
-
+<div>
+    <?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+        <aside id="sidebar" class="widget-area">
+            <?php dynamic_sidebar( 'blog-sidebar' ); ?>
+        </aside>
+    <?php endif; ?>
+</div>
 </main>
 
 <?php

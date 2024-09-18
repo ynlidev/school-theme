@@ -1,14 +1,13 @@
-
-
 #colophon {
-  background-color: $footer-bg-color;  
-  color: $text-color;  
+  background-color: $footer-bg-color;
+  color: $text-color;
   text-align: center;
   padding: 20px;
   font-family: Arial, sans-serif;
   font-size: 14px;
+  width: 100%;
 
-   .footer-credits {
+  .footer-credits {
     margin-bottom: 20px;
 
     h2 {
@@ -27,7 +26,7 @@
     }
   }
 
-   .footer-nav {
+  .footer-nav {
     margin-top: 10px;
 
     h2 {
@@ -46,34 +45,29 @@
         color: $link-hover-color;
       }
     }
-    
 
-.menu, .menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .menu,
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.menu ul {
-  display: contents; 
-}
+    .menu ul {
+      display: contents;
+    }
 
-.menu li {
-  display: contents; 
-}
- 
-
-
-
-
+    .menu li {
+      display: contents;
+    }
   }
 
-   #footer-logo img {
+  #footer-logo img {
     width: 150px;
     height: 150px;
   }
 
-   .menu-footer-left-container {
+  .menu-footer-left-container {
     ul {
       list-style: none;
       padding: 0;
@@ -96,9 +90,17 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64em) {
   .site-footer {
     display: grid;
     grid-template-columns: 1fr repeat(2, 1fr);
+  }
+  #colophon {
+    .footer-credits h2 {
+      font-size: 2rem;
+    }
+    .footer-nav h2 {
+      font-size: 2rem;
+    }
   }
 }

@@ -11,6 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<section class="site-main-section">
 
 		<?php
 		while ( have_posts() ) :
@@ -32,6 +33,14 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+		</section>
+	<div>
+    <?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+        <aside id="sidebar" class="widget-area">
+            <?php dynamic_sidebar( 'blog-sidebar' ); ?>
+        </aside>
+    <?php endif; ?>
+    </div>
 
 	</main><!-- #main -->
 

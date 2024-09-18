@@ -1,41 +1,70 @@
-.blog, .single {
-    .site-main {
-      margin: auto;
-      padding: 0 1rem;
+.blog,
+.single {
+  .site-main-section {
+    margin: 0 1rem;
 
-      h2 a {
-        text-decoration: none;
-      }
-  
-      header {
-        display: block;
-        unicode-bidi: isolate;
-  
-        h2 {
-          font-size: 1.5em;
-        }
- 
-      }
+    h2 a {
+      text-decoration: none;
+    }
 
-      
-  
-      img {
-        max-height: 3500px;
-        object-fit: cover;
-        display: block;
-        height: auto;
-        max-width: 100%;
+    header {
+      display: block;
+      unicode-bidi: isolate;
+
+      h2 {
+        font-size: 1.5em;
       }
     }
-  }
-  
 
-  @media (min-width: 64em) {
-    .blog, .single {
-      .site-main {
-        max-width: 1400px; 
-        margin: 2rem auto; 
-      }
+    img {
+      max-height: 3500px;
+      object-fit: cover;
+      display: block;
+      height: auto;
+      max-width: 100%;
     }
   }
-  
+}
+
+.custom-logo {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#sidebar .widget {
+  flex: 1 1 20%;
+  margin: 10px;
+  text-align: center;
+
+  p {
+    font-size: 2rem;
+    padding: auto;
+    margin: 1rem;
+  }
+}
+
+#sidebar .widget input[type="search"],
+#sidebar .widget select,
+#sidebar .widget ul,
+#sidebar .widget table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (min-width: 64em) {
+  .blog,
+  .single {
+    .site-main-section {
+      margin: 0 8rem;
+    }
+    .site-main .widget-area {
+      max-width: 1400px;
+      margin: 2rem auto;
+    }
+    #sidebar {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
