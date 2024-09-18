@@ -12,11 +12,12 @@
 ?>
 
 <footer id="colophon" class="site-footer">
-    <!-- Footer Logo -->
     <nav class="footer-logo">
-		<a href="<?php echo get_home_url(); ?>" class="custom-logo-link" rel="home" aria-current="page">
-            <img  class="logo-icon"src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/09/iconmonstr-school-17-240.png">
-        </a>		
+        <?php if ( has_custom_logo() ) : ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php the_custom_logo(); ?>
+            </a>
+        <?php endif; ?>		
     </nav>
 
     <!-- Footer Credits -->
