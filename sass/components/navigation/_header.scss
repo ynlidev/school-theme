@@ -1,5 +1,8 @@
 /* General header styles */
 .site-header {
+  position: fixed;
+  width: 100%;
+  top: 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,7 +83,7 @@
   display: block;
   width: 100%;
   position: absolute;
-  top: 6.5rem;
+  top: 2rem;
   right: 0;
   z-index: 1000;
 
@@ -119,12 +122,13 @@
 
   &.toggled ul {
     display: block;
+    top: 0rem;
   }
 }
 
 .menu-toggle {
   position: absolute;
-  top: -7rem;
+  top: -2.5rem;
   right: 0.5rem;
   z-index: 1100;
   display: block;
@@ -132,7 +136,8 @@
   padding: 1rem;
   margin: 0;
   border: none;
-  background-color: #fff;
+  background-color: unset;
+  fill: #ffffff;
 }
 
 @media screen and (min-width: 50em) {
@@ -145,7 +150,7 @@
 
   .main-navigation {
     width: 80%;
-    position: relative;
+    position: absolute;
     top: 0;
     align-self: center;
     margin-left: auto;
@@ -169,7 +174,6 @@
       a {
         left: -999em;
         top: 0;
-        width: 200px;
         text-align: left;
       }
 
