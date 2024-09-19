@@ -2,6 +2,7 @@
 .site-header {
   position: fixed;
   width: 100%;
+  z-index: 999;
   top: 0rem;
   height: 3.0625rem;
   display: flex;
